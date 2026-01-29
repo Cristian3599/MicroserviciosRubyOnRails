@@ -1,0 +1,85 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "4c83615e085bfd8e9d3d25a77eaa4cf55df970930c9af0bcbd72c8a52defcc0f",
+    "telemetry.devDeviceId": "f870dc81-ca35-4424-989b-749d72422785",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///home/cristian/Documentos/Prueba/customer_service"
+            },
+            {
+                "folderUri": "file:///home/cristian/Documentos/Prueba/order_service"
+            }
+        ],
+        "emptyWindows": []
+    },
+    "windowControlHeight": 35,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/cristian/Documentos/Prueba/customer_service": "__default__profile__",
+            "file:///home/cristian/Documentos/Prueba/order_service": "__default__profile__"
+        },
+        "emptyWindows": {}
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#1f1f1f",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#cccccc",
+            "background": "#1f1f1f",
+            "editorBackground": "#1f1f1f",
+            "titleBarBackground": "#181818",
+            "titleBarBorder": "#2b2b2b",
+            "activityBarBackground": "#181818",
+            "activityBarBorder": "#2b2b2b",
+            "sideBarBackground": "#181818",
+            "sideBarBorder": "#2b2b2b",
+            "statusBarBackground": "#181818",
+            "statusBarBorder": "#2b2b2b",
+            "statusBarNoFolderBackground": "#1f1f1f"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 48,
+            "sideBarWidth": 238,
+            "auxiliaryBarWidth": 0,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "sideBarWidth": 238,
+            "auxiliaryBarWidth": 239,
+            "workspaces": {
+                "954fc44f951f538ade29845328aff0ac": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "3cf9d69ff758ac7a07a15c98d4edd836": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                }
+            }
+        }
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/cristian/Documentos/Prueba/order_service",
+            "backupPath": "/home/cristian/Documentos/Prueba/customer_service/Backups/33927d30a747fd2b3891b9f6cbf3da42",
+            "uiState": {
+                "mode": 0,
+                "x": 70,
+                "y": 27,
+                "width": 954,
+                "height": 741
+            }
+        },
+        "openedWindows": []
+    }
+}

@@ -1,0 +1,46 @@
+# --- Docker & Bases de Datos ---
+# Ignora los datos persistentes de los contenedores para que no se suban al repo
+postgres/
+pgadmin/
+*.log
+*.logs/
+
+# --- Variables de Entorno (CRÍTICO) ---
+# Nunca subas tus credenciales reales. 
+# Solo se deben subir archivos .env.example o .env.test
+.env
+*/.env
+.env.production
+*/.env.production
+
+# --- Ruby / Rails (Genérico para ambos servicios) ---
+# Ignora dependencias y archivos temporales de cada microservicio
+*/vendor/bundle
+*/log/*.log
+*/tmp/
+*/public/assets
+*/public/packs
+*/public/packs-test
+*/node_modules/
+*/.bundle/
+
+# --- Base de Datos Rails ---
+# Ignora los archivos de SQLite si los usaste por error y el schema local
+*/db/*.sqlite3
+*/db/*.sqlite3-journal
+# Nota: db/schema.rb SÍ debe subirse, pero no archivos temporales
+
+# --- Sistema Operativo ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- RSpec ---
+*/coverage/
+*/spec/examples.txt
+
+# --- Kamal ---
+.kamal/
+**/secrets
+**/secrets.active

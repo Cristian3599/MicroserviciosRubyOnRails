@@ -1,0 +1,65 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: always
+    ports:
+      - "5672:5672"   # Puerto de comunicación
+      - "15672:15672" # Panel de control (user: guest, pass: guest)
+    networks:
+      - microservices_net
+
+  db:
+    image: postgres:15.1
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    networks:
+      - microservices_net
+
+  order-service:
+    build: ./order_service
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - ./order_service:/app
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./order_service/.env
+    depends_on:
+      - db
+      - rabbitmq
+    networks:
+      - microservices_net
+
+  customer-service:
+    build: ./customer_service
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3001 -b '0.0.0.0'"
+    volumes:
+      - ./customer_service:/app
+    ports:
+      - "3001:3001"
+    env_file:
+      - ./customer_service/.env
+    depends_on:
+      - db
+      - rabbitmq
+    networks:
+      - microservices_net
+
+  customer-worker:
+    build: ./customer_service
+    command: bundle exec rake rabbitmq:consume  # <--- Este es el "arranque" automático
+    env_file:
+      - ./customer_service/.env
+    depends_on:
+      - rabbitmq
+      - db
+    networks:
+      - microservices_net
+
+networks:
+  microservices_net:
+    driver: bridge
