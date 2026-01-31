@@ -50,6 +50,7 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions.
   config.action_controller.raise_on_missing_callback_actions = true
-  config.hosts << "customer-service"
-  config.hosts << "localhost"
+  if ENV["ALLOWED_HOSTS"].present?
+    config.hosts.concat ENV["ALLOWED_HOSTS"].split(",")
+  end
 end
