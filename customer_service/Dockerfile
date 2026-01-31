@@ -28,4 +28,4 @@ COPY . .
 EXPOSE 3001
 
 # 7. Comando por defecto (será sobrescrito por docker-compose)
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["rails", "server", "-b", "0.0.0.0", "-p", "3001"]
