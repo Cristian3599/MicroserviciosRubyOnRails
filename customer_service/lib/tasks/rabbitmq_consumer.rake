@@ -6,7 +6,8 @@ namespace :rabbitmq do
       port: ENV["RABBITMQ_PORT"],
       username: ENV["RABBITMQ_USER"],
       password: ENV["RABBITMQ_PASSWORD"],
-      vhost: ENV["RABBITMQ_VHOST"]
+      vhost: ENV["RABBITMQ_VHOST"],
+      tls: ENV["RABBITMQ_TLS"],
     )
     connection.start
 
